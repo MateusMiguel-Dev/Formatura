@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Lancelot&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap");
+
+.lancelot-regular {
+  font-family: "Lancelot", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.montecarlo-regular {
+  font-family: "MonteCarlo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lancelot", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quote {
+  font-size: 32px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.illustration img {
+  width: 340px;
+  opacity: 0.9;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.title p {
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+
+.title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+}
+#nome {
+  font-family: "MonteCarlo", cursive;
+  font-size: 55px;
+}
+
+.line {
+  display: block;
+  width: 70%;
+  height: 1px;
+  background: #fff;
+  margin: 0 auto 20px;
+}
+
+/* CARDS */
+.card {
+  border: 1px solid #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+.card .date {
+  margin-top: 0px;
+  font-size: 25px;
+}
+
+.card strong {
+  font-size: 22px;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 900;
+}
+
+/* DETAILS */
+.details {
+  text-align: center;
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 20px;
+
+  /* duas animações juntas */
+  animation:
+    fadeUp 0.8s ease forwards,
+    pulseSoft 2.5s ease-in-out infinite;
+
+  animation-delay: 1s, 2s; /* primeiro aparece, depois começa o pulse */
+}
+
+.details h2 {
+  font-size: 28px;
+  padding-top: 15px;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 0px;
+  color: black;
+  margin: 0 auto;
+
+  font-weight: 900;
+}
+
+.contact {
+  background: #fff;
+  width: 100%;
+  color: #000;
+  padding: 0px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+
+.contact img {
+  width: 40px;
+}
+.contact p {
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+/* ===== ANIMAÇÃO DE ENTRADA ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* delays (efeito cascata) */
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
+}
+.delay-4 {
+  animation-delay: 0.8s;
+}
+.delay-5 {
+  animation-delay: 1s;
+}
+
+/* ===== ANIMAÇÃO DA IMAGEM ===== */
+.illustration img {
+  width: 340px;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+/* ===== PULSE SUAVE NO DETALHES ===== */
+.details {
+  text-align: center;
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 20px;
+  animation: pulseSoft 2.5s infinite;
+}
+
+@keyframes pulseSoft {
+  0% {
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    transform: scale(1.01);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0.2);
+    transform: scale(1);
+  }
+}
+/* SVG */
+.draw-svg {
+  width: 340px;
+}
+.draw-svg path {
+  fill: none;
+  stroke: white;
+  stroke-width: 0.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 80000;
+  stroke-dashoffset: 80000;
+
+  animation: draw 10s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* animação */
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* DELAY EM CASCATA (isso deixa premium) */
+.draw-svg path:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.draw-svg path:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.draw-svg path:nth-child(3) {
+  animation-delay: 1s;
+}
+.draw-svg path:nth-child(4) {
+  animation-delay: 1.4s;
+}
+.draw-svg path:nth-child(5) {
+  animation-delay: 1.6s;
+}
+.draw-svg path:nth-child(6) {
+  animation-delay: 1.8s;
+}
+.draw-svg path:nth-child(7) {
+  animation-delay: 2s;
+}
+.draw-svg path:nth-child(8) {
+  animation-delay: 2.6s;
+}
